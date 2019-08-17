@@ -22,3 +22,10 @@ vironmental features, namely environmental plugins.
         `$ export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"`
         `$ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH" org.antlr.v4.Tool'`
         `$ alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'`
+
+        4. compile with antlr and javac
+
+        `cd compiler/src`
+        *we use [vister mode](https://abcdabcd987.com/notes-on-antlr4/) to traverse syntax tree*
+        `antlr4 NFCompiler.g4 -visitor -o nflanguage/` 
+        `javac main/Interpreter.java`
