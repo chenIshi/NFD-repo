@@ -18,14 +18,21 @@ vironmental features, namely environmental plugins.
     3. install [antlr](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md) tool
 
         `$ cd /usr/local/lib`
+
         `$ curl -O https://www.antlr.org/download/antlr-4.7.1-complete.jar`
+
         `$ export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"`
+
         `$ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH" org.antlr.v4.Tool'`
+
         `$ alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'`
 
-        4. compile with antlr and javac
+    4. compile with antlr and javac
 
         `cd compiler/src`
+
         *we use [vister mode](https://abcdabcd987.com/notes-on-antlr4/) to traverse syntax tree*
+
         `antlr4 NFCompiler.g4 -visitor -o nflanguage/` 
+
         `javac main/Interpreter.java`
